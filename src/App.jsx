@@ -24,9 +24,6 @@ function App() {
         const augmentedPokemonArray = await Promise.all(
           jsonData.results.map((item) => getOnePokemon(item.url))
         );
-               
-
-        console.table(augmentedPokemonArray)
 
         setPokemonArray(augmentedPokemonArray);
 
@@ -35,8 +32,6 @@ function App() {
       }
     })();
   }, []);
-
-  console.log(pokemonArray)
 
   return (
     <>

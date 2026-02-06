@@ -12,4 +12,5 @@
     flex-direction: column;
     color: black;
     background-color: lightgray;
+    min-width: 200px;
 }
