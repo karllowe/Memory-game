@@ -1,6 +1,6 @@
 import "/src/styles/pokemonCard.css";
 
-function PokemonCard({pokemon, resetGame, score, setScore, selectedPokemonArray, setSelectedPokemonArray}) {
+function PokemonCard({pokemon, resetGame, score, setScore, selectedPokemonArray, setSelectedPokemonArray, shufflePokemonArray}) {
     return (
         <div 
             className="cardWrapper" 
@@ -10,6 +10,7 @@ function PokemonCard({pokemon, resetGame, score, setScore, selectedPokemonArray,
                     resetGame()
                 } else {
                     setSelectedPokemonArray([...selectedPokemonArray, pokemon.id]);
+                    shufflePokemonArray();
                     setScore(score + 1)
                 }
             }}

@@ -15,6 +15,11 @@ function App() {
     setSelectedPokemonArray([])
   }
 
+  function shufflePokemonArray() {
+    const shuffledArray = RandomSort(pokemonArray);
+    setPokemonArray(shuffledArray)
+  }
+
   useEffect(() => {
     (async () => {
       try {
@@ -50,7 +55,7 @@ function App() {
   return (
     <>
     <ScoreBoard score={score} setScore={setScore} selectedPokemonArray={selectedPokemonArray}/>
-    <ImageGrid pokemonArray = {pokemonArray} setScore={setScore} score={score} resetGame={resetGame} selectedPokemonArray={selectedPokemonArray} setSelectedPokemonArray={setSelectedPokemonArray}/>
+    <ImageGrid pokemonArray = {pokemonArray} setScore={setScore} score={score} resetGame={resetGame} selectedPokemonArray={selectedPokemonArray} setSelectedPokemonArray={setSelectedPokemonArray} shufflePokemonArray={shufflePokemonArray}/>
     </>
   )
 }
