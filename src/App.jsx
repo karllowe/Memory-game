@@ -2,10 +2,20 @@ import { useState, useEffect} from 'react'
 import './App.css'
 import { ImageGrid } from './ImageGrid';
 import { RandomSort } from './HelpFunctions';
+import { ScoreBoard } from './ScoreBoard';
 
 function App() {
   const [pokemonArray, setPokemonArray] = useState([]);
+  const [score, setScore] = useState(0);
+  const [firstSelectedPokemon, setFirstSelectedPokemon] = useState("");
+  const [secondSelectedPokemon, setSecondSelectedPokemon] = useState("");
   const maxCards = 5;
+
+  function resetGame() {
+    setScore(0);
+    setFirstSelectedPokemon("");
+    setSecondSelectedPokemon("")
+  }
 
   useEffect(() => {
     (async () => {
@@ -41,7 +51,8 @@ function App() {
 
   return (
     <>
-    <ImageGrid pokemonArray = {pokemonArray}/>
+    <ScoreBoard score={score} setScore={setScore} firstSelectedPokemon={firstSelectedPokemon} secondSelectedPokemon={secondSelectedPokemon}/>
+    <ImageGrid pokemonArray = {pokemonArray} setScore={setScore} score={score} firstSelectedPokemon={firstSelectedPokemon} setFirstSelectedPokemon={setFirstSelectedPokemon} secondSelectedPokemon={secondSelectedPokemon} setSecondSelectedPokemon={setSecondSelectedPokemon} resetGame={resetGame} />
     </>
   )
 }
