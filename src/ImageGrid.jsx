@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import "/src/styles/imageGrid.css";
+import { PokemonCard } from "./PokemonCard";
 
 function ImageGrid({pokemonArray}) {
 
@@ -12,15 +13,6 @@ function ImageGrid({pokemonArray}) {
                     </div>
                 ))
             }
-        </div>
-    )
-}
-
-function PokemonCard({pokemon}) {
-    return (
-        <div className="pokemonCard">
-            <h2>{pokemon.name}</h2>
-            <img src={pokemon.imageUrl} alt="" />
         </div>
     )
 }

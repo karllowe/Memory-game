@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import './App.css'
 import { ImageGrid } from './ImageGrid';
-import { RandomSort } from './styles/HelpFunctions';
+import { RandomSort } from './HelpFunctions';
 
 function App() {
   const [pokemonArray, setPokemonArray] = useState([]);

@@ -3,14 +3,8 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     background-color: white;
-    column-gap: 8px;
+    column-gap: 20px;
     padding: 12px;
+    perspective: 1000px;
 }
 
-.pokemonCard {
-    display: flex;
-    flex-direction: column;
-    color: black;
-    background-color: lightgray;
-    min-width: 200px;
-}
