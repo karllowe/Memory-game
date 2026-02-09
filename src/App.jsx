@@ -59,7 +59,7 @@ function App() {
 
   return (
     <>
-    <ScoreBoard score={score} setScore={setScore} selectedPokemonArray={selectedPokemonArray}/>
+    <ScoreBoard score={score} setScore={setScore}/>
     <ImageGrid pokemonArray = {pokemonArray} setScore={setScore} score={score} resetGame={resetGame} selectedPokemonArray={selectedPokemonArray} setSelectedPokemonArray={setSelectedPokemonArray} shufflePokemonArray={shufflePokemonArray}/>
     </>
   )

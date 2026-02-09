@@ -8,9 +8,7 @@ function ImageGrid({pokemonArray, score, setScore, resetGame, selectedPokemonArr
         <div className="imageGrid">
             {
                 pokemonArray.map((item) => (
-                    <div key={item.id} className="pokemonCard">
-                        <PokemonCard pokemon={item} score={score} setScore={setScore} resetGame={resetGame} selectedPokemonArray={selectedPokemonArray} setSelectedPokemonArray={setSelectedPokemonArray} shufflePokemonArray={shufflePokemonArray}/>
-                    </div>
+                    <PokemonCard key={item.id} pokemon={item} score={score} setScore={setScore} resetGame={resetGame} selectedPokemonArray={selectedPokemonArray} setSelectedPokemonArray={setSelectedPokemonArray} shufflePokemonArray={shufflePokemonArray}/>
                 ))
             }
         </div>
