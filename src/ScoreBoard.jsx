@@ -1,11 +1,11 @@
-function ScoreBoard({score, firstSelectedPokemon, secondSelectedPokemon}) {
+function ScoreBoard({score, selectedPokemonArray}) {
     return (
         <div className="scoreBoard">
             <h3>Score:</h3>
             <p>
                 {score}
             </p>
-            <p>first: {firstSelectedPokemon} second:{secondSelectedPokemon}</p>
+            <p>{selectedPokemonArray}</p>
         </div>
     )
 }

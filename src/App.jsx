@@ -7,14 +7,12 @@ import { ScoreBoard } from './ScoreBoard';
 function App() {
   const [pokemonArray, setPokemonArray] = useState([]);
   const [score, setScore] = useState(0);
-  const [firstSelectedPokemon, setFirstSelectedPokemon] = useState("");
-  const [secondSelectedPokemon, setSecondSelectedPokemon] = useState("");
+  const [selectedPokemonArray, setSelectedPokemonArray] = useState([]);
   const maxCards = 5;
 
   function resetGame() {
     setScore(0);
-    setFirstSelectedPokemon("");
-    setSecondSelectedPokemon("")
+    setSelectedPokemonArray([])
   }
 
   useEffect(() => {
@@ -51,8 +49,8 @@ function App() {
 
   return (
     <>
-    <ScoreBoard score={score} setScore={setScore} firstSelectedPokemon={firstSelectedPokemon} secondSelectedPokemon={secondSelectedPokemon}/>
-    <ImageGrid pokemonArray = {pokemonArray} setScore={setScore} score={score} firstSelectedPokemon={firstSelectedPokemon} setFirstSelectedPokemon={setFirstSelectedPokemon} secondSelectedPokemon={secondSelectedPokemon} setSecondSelectedPokemon={setSecondSelectedPokemon} resetGame={resetGame} />
+    <ScoreBoard score={score} setScore={setScore} selectedPokemonArray={selectedPokemonArray}/>
+    <ImageGrid pokemonArray = {pokemonArray} setScore={setScore} score={score} resetGame={resetGame} selectedPokemonArray={selectedPokemonArray} setSelectedPokemonArray={setSelectedPokemonArray}/>
     </>
   )
 }

@@ -1,21 +1,17 @@
 import "/src/styles/pokemonCard.css";
 
-function PokemonCard({pokemon, firstSelectedPokemon, setFirstSelectedPokemon, setSecondSelectedPokemon, resetGame, score, setScore}) {
+function PokemonCard({pokemon, resetGame, score, setScore, selectedPokemonArray, setSelectedPokemonArray}) {
     return (
         <div 
             className="cardWrapper" 
             role="button" 
             onClick={() => {
-                if (firstSelectedPokemon.length<1) {
-                    setFirstSelectedPokemon(pokemon.id)
+                if (selectedPokemonArray.includes(pokemon.id)) {
+                    resetGame()
                 } else {
-                    setSecondSelectedPokemon(pokemon.id);
-                    if (firstSelectedPokemon == pokemon.id) {
-                        resetGame()
-                    } else {
-                        setScore(score+1)
-                    }
-                };
+                    setSelectedPokemonArray([...selectedPokemonArray, pokemon.id]);
+                    setScore(score + 1)
+                }
             }}
         >
             <div className="pokemonCard">
